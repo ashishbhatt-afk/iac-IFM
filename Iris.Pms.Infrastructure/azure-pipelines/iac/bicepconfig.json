@@ -1,0 +1,22 @@
+{
+    "analyzers": {
+        "core": {
+            "rules": {
+                "no-loc-expr-outside-params": {
+                    "level": "off"
+                },
+                "prefer-interpolation": {
+                    "level": "warning"
+                }
+            }
+        }
+    },
+    "moduleAliases": {
+        "br": {
+            "Operations": {
+                "registry": "acropscoresha.azurecr.io",
+                "modulePath": "bicep/modules"
+            }
+        }
+    }
+}

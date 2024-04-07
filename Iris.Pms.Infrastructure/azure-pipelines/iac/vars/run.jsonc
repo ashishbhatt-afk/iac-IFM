@@ -1,0 +1,11 @@
+{
+  "createAgw": true,
+  "diags": false,
+  "insights": false,
+  "envLong": "Staging",
+  "envShort": "stg",
+  // "productRef": "",
+  "productLong": "IRIS Firm Management",
+  "productShort": "ifm",
+  "startTime": ""
+}

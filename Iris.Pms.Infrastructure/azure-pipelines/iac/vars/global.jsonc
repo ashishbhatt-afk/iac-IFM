@@ -1,0 +1,16 @@
+{
+    "aks": {
+        "tier": "Standard",
+        "pool": {
+            "count": 1,
+            "enableAutoScaling": true,
+            "enableNodePublicIP": false,
+            "maxCount": 20,
+            "minCount": 1,
+            "osDiskSizeGB": 128,
+            "osSKU": "Ubuntu",
+            "osType": "Linux",
+            "vmSize": "Standard_E4ads_v5"
+        }
+    }
+}

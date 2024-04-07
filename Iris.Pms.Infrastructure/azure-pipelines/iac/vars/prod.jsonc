@@ -1,0 +1,18 @@
+{
+  "diags": true,
+  "insights": true,
+  "plans": [
+    {
+      "id": 0,
+      "kind": "windows",
+      "sku": "P1V3"
+    },
+    {
+      "id": 1,
+      "kind": "windows",
+      "sku": "EP2"
+    }
+  ],
+  "privateNetworking": true,
+  "storageSku": "Standard_GZRS"
+}

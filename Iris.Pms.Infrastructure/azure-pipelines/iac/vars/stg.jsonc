@@ -1,0 +1,92 @@
+{
+  "diags": true,
+  "insights": true,
+  "aks": {
+    // "kubernetesVersion": "1.26.12",
+    "tier": "Standard",
+    "agentPools": [
+      {
+        "name": "agentpool",
+        "count": 1,
+        "enableAutoScaling": true,
+        "enableNodePublicIP": false,
+        "maxCount": 20,
+        "minCount": 1,
+        "maxPods": 250,
+        "mode": "System",
+        "osDiskSizeGB": 128,
+        "osSKU": "Ubuntu",
+        "osType": "Linux",
+        "scaleDownMode": "Delete",
+        "vmSize": "Standard_E4ads_v5"
+      },
+      {
+        "name": "lpool",
+        "count": 1,
+        "enableAutoScaling": true,
+        "enableNodePublicIP": false,
+        "maxCount": 20,
+        "minCount": 1,
+        "maxPods": 250,
+        "mode": "User",
+        "osDiskSizeGB": 128,
+        "osSKU": "Ubuntu",
+        "osType": "Linux",
+        "scaleDownMode": "Delete",
+        "vmSize": "Standard_E8ads_v5"
+      }
+    ]
+  },
+  "networking": {
+    "agw": {
+      "maxCapacity": 2,
+      "minCapacity": 1,
+      "skuCapacity": 1,
+      "skuName": "WAF_v2"
+    },
+    "domain": "irispme.com",
+    "vnet": {
+      "natGateway": false,
+      "prefix": "10.224.0.0/12",
+      "subnets": [
+        {
+          "id": "pep",
+          "prefix": "10.224.0.0/22"
+        },
+        {
+          "id": "agw",
+          "prefix": "10.224.4.0/24"
+        },
+        {
+          "id": "aks",
+          "prefix": "10.225.0.0/16",
+          "endpoints": [
+            {
+              "service": "Microsoft.Storage"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "redis": {
+    "skuCapacity": 1,
+    "skuFamily": "C",
+    "skuName": "Basic"
+  },
+  "sql": {
+    "aadAdminId": "78f9f807-ebf8-48ee-b94c-53b1fa9bf24c",
+    "aadAdminLogin": "IAS-iChannel-DEV-Admins",
+    "pools": [
+      {
+        "id": 1,
+        "dbMaxCapacity": 400,
+        "maxSizeGb": 200,
+        "skuCapacity": 400,
+        "skuName": "StandardPool",
+        "skuTier": "Standard"
+      }
+    ]
+  },
+  "storageSku": "Standard_ZRS"
+}
